@@ -108,6 +108,7 @@ http://www.tooplate.com/view/2096-individual
 		    <a class="image-link" href="img/kubrik sunset 28122017 copy.jpg"><img src="img/kubrik sunset 28122017 copy.jpg" alt="Image" class="tm-slider-img"></a>
 		    <a class="image-link" href="img/P1120842, @prfnv - copy.jpg"><img src="img/P1120842, @prfnv - copy.jpg" alt="Image" class="tm-slider-img"></a>
 		    <a class="image-link" href="img/k game on 1 copy.jpg"><img src="img/k game on 1 copy.jpg" alt="Image" class="tm-slider-img"></a>
+		    <a class="vid-link" href="vid/tl sunrise @prfnv @prfnv copy.MP4.jpg"><vid src="img/tl sunrise @prfnv @prfnv copy.MP4.MP4" alt="Image" class="tm-slider-img"></a>
                 </div>
               </div>
             </div>
@@ -213,5 +214,33 @@ http://www.tooplate.com/view/2096-individual
             });
 
           </script>
+            <script>  
+    
+            $(document).ready(function(){
+
+                // init Masonry
+                // https://codepen.io/craigwheeler/pen/MYjBga
+                var $grid = $('.grid').masonry({
+                
+                    // set itemSelector so .grid-sizer is not used in layout
+                    // itemSelector: '.grid-item',
+                    // use element for option
+                    // columnWidth: '.grid-sizer',
+                    // percentPosition: true
+
+                    itemSelector: '.grid-item',
+                    isFitWidth: true,
+                    columnWidth: 1
+                });
+                // layout Masonry after each image loads
+                $grid.imagesLoaded().progress( function() {
+                  $grid.masonry('layout');
+                });            
+
+                // Update the current year in copyright
+                $('.tm-current-year').text(new Date().getFullYear());        
+            });
+
+            </script>
         </body>
         </html>
